@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireGenerator : MonoBehaviour
 {
-    public GameObject Prefab;
+    public GameObject[] Prefabs;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,7 @@ public class FireGenerator : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Jump")) {
-            Instantiate(Prefab);
+            Instantiate(Prefabs[Random.Range(0,Prefabs.Length)]);
         }
     }
 }
